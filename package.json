@@ -2,6 +2,7 @@
   "name": "paises-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://emadev.github.io/desafio-kimche/",
   "dependencies": {
     "@apollo/client": "^3.6.2",
     "@emotion/styled": "^11.8.1",
