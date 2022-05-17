@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { BiSearchAlt } from 'react-icons/bi';
 
 interface Props {

@@ -1,5 +1,5 @@
-import { FC, useEffect } from 'react';
-import styled from '@emotion/styled';
+import { FC } from 'react';
+import styled from 'styled-components';
 import { MdSearchOff } from 'react-icons/md';
 import { CountriesOrdened } from '../hooks/useFilterCountries';
 import { CountriesResults } from './CountriesResults';
@@ -7,7 +7,7 @@ import { CountriesResults } from './CountriesResults';
 interface Props {
     state: CountriesOrdened | undefined;
     gbCont: boolean;
-    searched: string;
+    searched?: string;
 }
 const Main = styled.main`
    padding: 2rem;
@@ -29,11 +29,8 @@ const IconEmpty = styled.div`
    }
 `;
 
-export const SearchSection: FC<Props> = ({ state, gbCont,searched }) => {
+export const SearchSection: FC<Props> = ({ state, gbCont}) => {
     
-    useEffect( () => {
-        console.log(searched);
-    },[searched]);
     return (
         <Main>
             {

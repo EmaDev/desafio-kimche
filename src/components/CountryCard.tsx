@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { gql, useLazyQuery } from '@apollo/client';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Country, Language, State } from '../interfaces/CountriesInterfaces';
 import { Spinner } from './Spinner';
 
