@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.be2204cd.css",
-    "main.js": "/static/js/main.64815639.js",
-    "index.html": "/index.html",
-    "main.be2204cd.css.map": "/static/css/main.be2204cd.css.map",
-    "main.64815639.js.map": "/static/js/main.64815639.js.map"
+    "main.css": "/desafio-kimche/static/css/main.15886da0.css",
+    "main.js": "/desafio-kimche/static/js/main.979508c0.js",
+    "index.html": "/desafio-kimche/index.html",
+    "main.15886da0.css.map": "/desafio-kimche/static/css/main.15886da0.css.map",
+    "main.979508c0.js.map": "/desafio-kimche/static/js/main.979508c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.be2204cd.css",
-    "static/js/main.64815639.js"
+    "static/css/main.15886da0.css",
+    "static/js/main.979508c0.js"
   ]
 }
