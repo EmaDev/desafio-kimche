@@ -16,10 +16,6 @@ interface CountriesGroup {
     language?:Language;
     countries: Country[];
 }
-interface CountriesGroupContinent {
-    continent: Continent;
-    countries: Country[];
-}
 
 const ALL_LANGUAGES = gql`
    query {
@@ -40,6 +36,12 @@ const ALL_CONTINENTS = gql`
 `;
 export const useFilterCountries = () => {
 
+    /*
+    NOTA:
+    He decidido solicitar la informacion minima necesaria de la API y guardarla
+    en un state, para poder filtrar los paises a medida que se escriben las letras,
+    a mi parecer esta manera es mas eficiente que consultar la API cada vez.
+    */
     const [stateFiltered, setStateFiltered] = useState<CountriesOrdened>();
     const [stateOptionGroup, setStateOptionGroup] = useState<GroupByOptions>({ allContinents: [], allLanguages: [] });
     const resultContinents = useQuery(ALL_CONTINENTS);
