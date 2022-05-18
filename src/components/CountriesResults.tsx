@@ -1,19 +1,13 @@
 import { FC } from 'react';
-import styled from 'styled-components';
-import { Country, Language } from '../interfaces/CountriesInterfaces';
+import { Country} from '../interfaces/CountriesInterfaces';
 import { CountryCard } from './CountryCard';
+import { Container, GroupTitle } from './CountryCard.element';
 
 interface Props {
     countries: Country[];
     order: string;
 }
 
-const Container = styled.div`
-   @media( min-width: 540px ) {
-    display: grid;
-    grid-template-columns: 50% 50%;
-   }
-`;
 
 export const CountriesResults: FC<Props> = ({ countries, order }) => {
 
@@ -22,7 +16,7 @@ export const CountriesResults: FC<Props> = ({ countries, order }) => {
             {
                 (countries.length > 0) &&
                 <>
-                    <h1>{order}</h1>
+                    <GroupTitle>{order}</GroupTitle>
                     <Container>
                         {
                             countries.map(country => (

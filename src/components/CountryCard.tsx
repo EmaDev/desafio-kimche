@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { gql, useLazyQuery } from '@apollo/client';
-import styled from 'styled-components';
-import { Country, Language, State } from '../interfaces/CountriesInterfaces';
+import { Country, Language} from '../interfaces/CountriesInterfaces';
 import { Spinner } from './Spinner';
+import { Card, CountryAtribute, CountryName,Button} from './CountryCard.element';
 
 
 interface Props {
@@ -13,6 +13,7 @@ const GET_COUNTRY = gql`
     country(code: $codeToSearch){
       phone,
       currency,
+      emojiU,
       languages{
         name
       }
@@ -26,51 +27,7 @@ const GET_COUNTRY = gql`
     }
   }
 `
-const Card = styled.div`
-  padding: 1rem;
-  background-color: var(--grisClaro);
-  margin: 1rem;
-  border: 1px solid var(--negro);
-  border-radius: 8px;
-`;
-const CountryName = styled.div`
-  display: flex;
-  align-itmes: center;
-  p{
-    font-size: 2rem;
-    margin: 0 .5rem;
-    padding:0;
-  }
-  h2{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 2rem;
-   }
-`;
-const CountryAtribute = styled.p`
-   margin: .3rem;
-   font-size: 1.7rem;
-   font-weigth: bold;
-   span{
-     font-size: 1.6rem;
-     font-weight:bold;
-   }
-`;
-const Button = styled.button`
-   display: block;
-   width: 100%;
-   margin-top: 1.5rem;
-   padding: .5rem 1rem;
-   border-radius: 10px; 
-   background-color: var(--grisOscuro);
-   border-style: none;
-   border: 1px solid var(--negro);
-`;
 
-const exa = () => {
-  
-}
 export const CountryCard: FC<Props> = ({ country }) => {
 
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -107,26 +64,9 @@ export const CountryCard: FC<Props> = ({ country }) => {
     )
   };
 
-
-  const showDataArray2 = (data: any,field:string ) => {
-    let str = '';
-    
-    for( let i = 0; i < data.length; i++){
-      if(i > 0){
-        str += `, ${data[i].name}`;
-      }else{
-        str += data[i].name;
-      }
-    }
-    return (
-      <CountryAtribute><span>{field}: </span>{str}</CountryAtribute>
-    )
-  };
-
   return (
     <Card>
       <CountryName>
-        {/*TODO: Mostrar emoji*/}
         <p>{country.emoji}</p>
         <h2>{country.name}</h2>
       </CountryName>
@@ -139,6 +79,7 @@ export const CountryCard: FC<Props> = ({ country }) => {
             <>
               <CountryAtribute><span>Currency: </span>{countryData.country.currency}</CountryAtribute>
               <CountryAtribute><span>Phone: </span>{countryData.country.phone}</CountryAtribute>
+              <CountryAtribute><span>Emoji Unicode: </span>{countryData.country.emojiU}</CountryAtribute>
               {showDataArray(countryData.country.languages, 'Languages')}
               {showDataArray(countryData.country.states, 'States')}
             </>

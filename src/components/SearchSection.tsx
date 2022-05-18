@@ -1,33 +1,13 @@
 import { FC } from 'react';
-import styled from 'styled-components';
 import { MdSearchOff } from 'react-icons/md';
 import { CountriesOrdened } from '../hooks/useFilterCountries';
 import { CountriesResults } from './CountriesResults';
+import { IconEmpty, Main } from './SearchSection.element';
 
 interface Props {
     state: CountriesOrdened | undefined;
     gbCont: boolean;
-    searched?: string;
 }
-const Main = styled.main`
-   padding: 2rem;
-   margin-top: 2rem;
-`;
-const IconEmpty = styled.div`
-   margin: 3rem auto;
-   display:flex;
-   justify-content:center;
-   align-items: center;
-   div{
-       margin:auto;
-       align-items:center;
-       display:flex;
-       justify-content:center;
-    }
-   h2{
-       color: grey;
-   }
-`;
 
 export const SearchSection: FC<Props> = ({ state, gbCont}) => {
     

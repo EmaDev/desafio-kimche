@@ -15,10 +15,13 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <div className='body'>
+        <App/>
+      </div>
     </ApolloProvider>
   </React.StrictMode>
 );
