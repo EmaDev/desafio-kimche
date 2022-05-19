@@ -1,7 +1,7 @@
 # Desafío para Software Engineers
 
-Nombre postulante: Emanuel Cisterna
-Link a la app en producción: https://emadev.github.io/desafio-kimche
+- Emanuel Cisterna
+- https://emadev.github.io/desafio-kimche
 
 ## Instrucciones
 
@@ -37,3 +37,13 @@ Acá van algunas cosas que pueden ser útiles (o no 👀):
 - [Eslint](https://eslint.org/)
 - [Eslint airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 - [Husky](https://www.npmjs.com/package/husky)
+
+
+## Pregunta 
+
+La tabla que contiene la información correspondiente a la asistencia diaria de un niño en un colegio tiene 90 millones de filas. Todas las tablas del sistema existen en la misma BDD en MySQL. La lógica del backend que actualiza la información correspondiente al pasar la asistencia tiene un tiempo de servicio p95 de 10 segundos. El equipo está interesado en bajar este tiempo para mejorar la experiencia del usuario. ¿Qué propondrías para enfrentar el problema? Esta pregunta es abierta, no hay respuestas malas. Puedes proponer arquitectura, tecnologías, diseño,etc.
+
+Mi respuesta: 
+
+Segun mi opinion en primer lugar se deberia verificar la eficiencia de la Query que actualiza la informacion de la asistencia, posiblemente con una mejora en la query el tiempo del servicio se redicira. Si esta opcion no soluciona el problema, otra opcion podria ser modificar la arquitectura de la DB actual, para esto es necesario ver el diagrama entidad relacion e identificar las posibles modificaciones. 
+Otra opcion podria ser migrar cierta parte de la informacion a otra base de datos, preferentemente de tipo no relacional de esta manera se realizaran las consultas con mayor velocidad. 
